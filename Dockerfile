@@ -53,3 +53,5 @@ RUN make setup_dev DEV_PREFIX=/vagrant-dev \
   && rm /vagrant-dev/opt/google-cloud-sdk-154.0.1-linux-x86_64.tar.gz
 
 CMD bash -c 'tail -f bin/init_env'
+
+CMD bash -c 'bin/launch_ggrc'
