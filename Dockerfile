@@ -1,5 +1,7 @@
 # Copyright (C) 2019 Google Inc.
 # Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
+ENV PORT 8080
+ENV HOST 0.0.0.0
 
 FROM phusion/baseimage
 
@@ -50,4 +52,4 @@ RUN make setup_dev DEV_PREFIX=/vagrant-dev \
   && make appengine_packages DEV_PREFIX=/vagrant-dev \
   && rm /vagrant-dev/opt/google-cloud-sdk-154.0.1-linux-x86_64.tar.gz
 
-CMD bash -c 'tail -f bin/init_env'
+CMD bash -c 'tail -f bin/init_env; python -m ggrc'
